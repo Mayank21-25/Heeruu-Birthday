@@ -139,18 +139,52 @@ body::before {
   .photos img { width: 140px; }
   .photos { height: 360px; }
 }
+/* 📱 Mobile safe photo layout */
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.photo-gallery img {
+  width: 85%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* 💻 Desktop positioning */
+@media (min-width: 768px) {
+  .photo-gallery {
+    position: relative;
+    height: 600px;
+  }
+
+  .photo-gallery img {
+    position: absolute;
+    width: 220px;
+  }
+
+  .photo1 { top: 0; left: 0; }
+  .photo2 { top: 160px; left: 35%; }
+  .photo3 { bottom: 0; right: 0; }
+  .photo4 { top: 80px; right: 20%; }
+  .photo5 { bottom: 120px; left: 20%; }
+}
 
   </style>
 </head>
 <body>  <h1>❤ Happy Birthday Heeruu ❤</h1>
-  <div class="symbols">  </div>  <div class="photos">
-    <img src="Photo1.jpg" alt="memory 1" />
-    <img src="Photo2.jpg" alt="memory 2" />
-    <img src="Photo6.jpg" alt="memory 6" />
-    <img src="Photo4.jpg" alt="memory 4" />
-    <img src="Photo5.jpg" alt="memory 5" />
-    <img src="Photo3.jpg" alt="memory 3" />
-  </div><button onclick="showLock()">Reveal My Love 💌</button> <button onclick="toggleDrawing()">One cute drawing from me 😁🎨</button>
+  <div class="photo-gallery">
+  <img src="Photo1.jpg" class="photo1">
+  <img src="Photo2.jpg" class="photo2">
+  <img src="Photo3.jpg" class="photo3">
+  <img src="Photo4.jpg" class="photo4">
+  <img src="Photo5.jpg" class="photo5">
+</div>
+  <button onclick="showLock()">Reveal My Love 💌</button> <button onclick="toggleDrawing()">One cute drawing from me 😁🎨</button>
 
   <div id="lockBox" class="letter hidden">
   <strong>Hint 💗</strong><br>
